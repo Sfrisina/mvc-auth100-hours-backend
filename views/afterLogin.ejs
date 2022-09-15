@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Control App</title>
+</head>
+<body>
+    <section class="input-row">
+        <h1>Inventory Control Utility</h1>
+       <form action="/afterLogin/createItem" method="POST">
+            <input type="number" placeholder="5-digit Item #" name="itemNum">
+            <input type="text" placeholder="Enter Description" name="description">
+            <input type="number" placeholder="quantity" name="quantity">
+            <input type="text" placeholder="image-link" name="image">
+            <input type="number" placeholder="price" name="price">
+            <button type="submit" id="submitButton">SUBMIT ITEM</button>
+            <button type="button" id="updateButton">UPDATE INFO</button>
+       </form>
+    </section>
+    <section>
+    <h2>Item Information</h2>
+    <ul>
+        <li><span>Item #:</span><span id="itemNumDisplay"></span></li>
+        <li><span>Description:</span><span id="descriptionDisplay"></span></li>
+        <li><span>Quantity:</span><span id="quantityDisplay"></span></li>
+    </ul>
+    <form action='/api/:itemNum' method="GET">
+        <input id="searchInput" type="number" placeholder="search item #" name="itemNum">
+        <button type="button" id="searchButton">SEARCH INFO</button>
+    </form>
+    </section>
+    <a href="/logout">Logout</a>
+    
+</body>
+</html>
