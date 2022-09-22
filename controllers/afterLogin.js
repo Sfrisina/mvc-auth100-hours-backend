@@ -1,3 +1,4 @@
+const { response } = require('express')
 const Item = require('../models/Item')
 
 module.exports = {
@@ -19,8 +20,37 @@ module.exports = {
                 inCart: false, })
                 console.log('Item Added')
                 res.redirect('/afterLogin')
+                console.log(req)
         }catch (err){
             console.log(err);
+        }
+    },
+    searchItem: async (req, res) => {
+        try {
+            let data = await Item.findOne({ 
+                itemNum: req.query.itemNum        
+        })
+            // await Item.findOne({
+              
+            // })
+            // console.log(res)
+            // console.log('item found')
+            console.log(data)
+        }catch (err){
+            console.log(err)
+        }
+    },
+    updateItem: async (req, res) => {
+        try {
+           await Item.findOneAndUpdate(
+            { itemNum: req.body.itemNum },
+           {quantity: req.body.quantity, price: req.body.price}
+          );
+          console.log(res)
+          console.log("item updated");
+          res.redirect('/afterLogin');
+        } catch (err) {
+          console.log(err);
         }
     }
 }

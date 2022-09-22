@@ -9,6 +9,7 @@
 <body>
     <section class="input-row">
         <h1>Inventory Control Utility</h1>
+        <h2>Add Item</h2>
        <form action="/afterLogin/createItem" method="POST">
             <input type="number" placeholder="5-digit Item #" name="itemNum">
             <input type="text" placeholder="Enter Description" name="description">
@@ -16,20 +17,29 @@
             <input type="text" placeholder="image-link" name="image">
             <input type="number" placeholder="price" name="price">
             <button type="submit" id="submitButton">SUBMIT ITEM</button>
-            <button type="button" id="updateButton">UPDATE INFO</button>
        </form>
     </section>
     <section>
-    <h2>Item Information</h2>
+    <h2>Item Lookup</h2>
     <ul>
-        <li><span>Item #:</span><span id="itemNumDisplay"></span></li>
+        <li><span>Item #:</span><span id="itemNumDisplay"><span></li>
         <li><span>Description:</span><span id="descriptionDisplay"></span></li>
         <li><span>Quantity:</span><span id="quantityDisplay"></span></li>
+        <li><span>Price:</span><span id="priceDisplay"></span></li>
     </ul>
-    <form action='/api/:itemNum' method="GET">
-        <input id="searchInput" type="number" placeholder="search item #" name="itemNum">
-        <button type="button" id="searchButton">SEARCH INFO</button>
-    </form>
+        <form action='/afterLogin/searchItem/' method="GET">
+            <input id="searchInput" type="number" placeholder="search item #" name="itemNum">
+            <button type="submit" id="searchButton">SEARCH INFO</button>
+        </form>
+    </section>
+    <section class="input-row">
+        <h2>Update Item</h2>
+       <form action="/afterLogin/updateItem/?_method=PUT" method="POST">
+            <input type="number" placeholder="5-digit Item #" name="itemNum">
+            <input type="number" placeholder="quantity" name="quantity">
+            <input type="number" placeholder="price" name="price">
+            <button type="submit" id="updateButton">UPDATE INFO</button>
+       </form>
     </section>
     <a href="/logout">Logout</a>
     
