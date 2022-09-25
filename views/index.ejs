@@ -1,20 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Auth Template</title>
-    <link rel="stylesheet" href="/css/style.css" />
-</head>
-<body>
+<%- include('partials/header') -%>
     <header id="login">
     <nav id="adminNav">
     <span class="adminNavItem" id="adminLogin">admin</span>
     <a class="adminNavItem" href="/login">Login</a>
     <a class="adminNavItem" href="/signup">Signup</a>
-    <nav>
+    </nav>
     </header>
+    <div class="container">
+        <div class="d-flex justify-content-around flex-wrap">
+        <% for(var i=0; i<items.length; i++) {%>
+            <ul class="col-4 list-unstyled">
+          <li class="mt-5 d-flex justify-content-center">
+            <a href="/items/<%= items._id%>">
+              <img class="" src="<%= items[i].image%>">
+            </a>
+          </li>
+          <li class="d-flex justify-content-center">Item# <%= items[i].itemNum%></li>
+          <li class="d-flex justify-content-center"><%= items[i].description%></li>
+          <li class="d-flex justify-content-center">$<%= items[i].price%></li>
+          <li class="d-flex justify-content-center"><button class="btn btn-primary"type="button">Add to Cart</button></li>
+            </ul>
+        <% } %>
     
-</body>
-</html>
+    </div>
+    </div>
+        <%- include('partials/footer') -%>

@@ -18,3 +18,20 @@ form{
 input, button{
     margin-top: 10px;
 }
+li img{
+    max-width: 100px;
+}
+.mainLogo{
+    height: 240px;
+    width: 100%;
+}
+footer{
+    margin-top: 5rem;
+    height: 180px;
+    color: white;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+    height: 30px;
+}

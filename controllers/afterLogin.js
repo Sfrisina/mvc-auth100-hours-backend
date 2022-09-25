@@ -1,4 +1,4 @@
-const { response } = require('express')
+const express = require('express')
 const Item = require('../models/Item')
 
 module.exports = {
@@ -35,7 +35,9 @@ module.exports = {
             // })
             // console.log(res)
             // console.log('item found')
+            // res.render('afterLogin', {data: itemNum})
             console.log(data)
+            res.redirect('/afterLogin')
         }catch (err){
             console.log(err)
         }
