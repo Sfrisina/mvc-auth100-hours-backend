@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Control App</title>
+    
 </head>
 <body>
     <section class="input-row">
@@ -22,14 +23,14 @@
     <section>
     <h2>Item Lookup</h2>
     <ul>
-        <li><span>Item #:</span><span id="itemNumDisplay"><span></li>
-        <li><span>Description:</span><span id="descriptionDisplay"></span></li>
-        <li><span>Quantity:</span><span id="quantityDisplay"></span></li>
-        <li><span>Price:</span><span id="priceDisplay"></span></li>
+        <li><span>Item #: </span><span id="itemNumDisplay"></span></li>
+        <li><span>Description: </span><span id="descriptionDisplay"></span></li>
+        <li><span>Quantity: </span><span id="quantityDisplay"> </span></li>
+        <li><span>Price: </span><span id="priceDisplay"></span></li>
     </ul>
-        <form action='/afterLogin/searchItem/' method="GET">
+        <form action='/afterLogin/searchItem/:itemNum' method="GET">
             <input id="searchInput" type="number" placeholder="search item #" name="itemNum">
-            <button type="submit" id="searchButton">SEARCH INFO</button>
+            <button type="button" id="searchButton">SEARCH INFO</button>
         </form>
     </section>
     <section class="input-row">
@@ -42,6 +43,6 @@
        </form>
     </section>
     <a href="/logout">Logout</a>
-    
+    <script src="js/main.js"></script>
 </body>
 </html>

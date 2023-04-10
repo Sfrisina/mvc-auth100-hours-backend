@@ -10,6 +10,7 @@ const methodOverride = require("method-override");
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const afterLoginRoutes = require('./routes/afterLogin')
+const path = require('path')
 // const { Console } = require('console')
 
 require('dotenv').config({path: './config/.env'})
@@ -20,7 +21,7 @@ require('./config/passport')(passport)
 connectDB()
 
 app.set('view engine', 'ejs')
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(logger('dev'))

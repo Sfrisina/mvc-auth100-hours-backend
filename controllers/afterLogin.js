@@ -28,16 +28,17 @@ module.exports = {
     searchItem: async (req, res) => {
         try {
             let data = await Item.findOne({ 
-                itemNum: req.query.itemNum        
+                itemNum: req.params.itemNum        
         })
             // await Item.findOne({
               
             // })
             // console.log(res)
             // console.log('item found')
-            // res.render('afterLogin', {data: itemNum})
+            //   res.render('afterLogin', {data: itemNum})
             console.log(data)
-            res.redirect('/afterLogin')
+            res.send(data)
+            // res.redirect('/afterLogin')
         }catch (err){
             console.log(err)
         }

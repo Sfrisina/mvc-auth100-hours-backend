@@ -8,7 +8,7 @@ router.get('/', ensureAuth)
 router.get('/', ensureAuth, todosController.getTodos)
 
 router.post('/createItem', afterLoginController.createItem)
-router.get('/searchItem', afterLoginController.searchItem)
+router.get('/searchItem/:itemNum', afterLoginController.searchItem)
 router.put('/updateItem', afterLoginController.updateItem)
 
 
