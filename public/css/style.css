@@ -35,3 +35,13 @@ footer a{
     text-decoration: none;
     height: 30px;
 }
+.addItemForm{
+    height: auto;
+}
+.cardImage{
+    max-width: 100px
+}
+.cartItem{
+height: auto;
+width: auto;
+}

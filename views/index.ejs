@@ -18,7 +18,7 @@
           <li class="d-flex justify-content-center">Item# <%= item.itemNum%></li>
           <li class="d-flex justify-content-center"><%= item.description%></li>
           <li class="d-flex justify-content-center">$<%= item.price%></li>
-          <li class="d-flex justify-content-center"><button class="btn btn-primary"type="button">Add to Cart</button></li>
+          <li class="d-flex justify-content-center"><form class="addItemForm" action="/item/addItem/<%= item._id %>" method="GET"><button class="btn btn-primary"type="submit">Buy</button></form></li>
             </ul>
         <% } %>
     

@@ -10,6 +10,8 @@ const methodOverride = require("method-override");
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const afterLoginRoutes = require('./routes/afterLogin')
+const itemRoutes = require('./routes/item')
+const cartRoutes = require('./routes/cart')
 const path = require('path')
 // const { Console } = require('console')
 
@@ -44,6 +46,8 @@ app.use(flash())
 
 app.use('/', mainRoutes)
 app.use('/afterLogin', afterLoginRoutes)
+app.use('/item', itemRoutes)
+app.use('/cart', cartRoutes)
 
 app.listen(process.env.PORT, () => {
     console.log('Server Running!!!!!')

@@ -17,3 +17,8 @@ async function searchItem(){
         console.log(err)
     }
 }
+document.getElementById('cartButton').addEventListener('click', addToCart)
+
+function addToCart(){   
+
+}

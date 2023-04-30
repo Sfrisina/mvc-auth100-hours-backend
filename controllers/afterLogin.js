@@ -20,7 +20,6 @@ module.exports = {
                 inCart: false, })
                 console.log('Item Added')
                 res.redirect('/afterLogin')
-                console.log(req)
         }catch (err){
             console.log(err);
         }
